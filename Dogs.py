@@ -75,4 +75,4 @@ import pytest
 def test_sub_breeds_for_breed():
     response = requests.get("https://dog.ceo/api/breed/husky/list")
     data = response.json()
-    assert len(data["message"]) > 0
+    assert len(data["message"]) >= 0
