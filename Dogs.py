@@ -7,8 +7,7 @@ def test_get_all_breeds_status_code_equals_200():
 
 
 
-import requests
-import pytest
+
 
 def test_all_breeds_list_is_not_empty():
     response = requests.get("https://dog.ceo/api/breeds/list/all")
@@ -16,8 +15,7 @@ def test_all_breeds_list_is_not_empty():
     assert len(data["message"]) > 0
 
 
-import requests
-import pytest
+
 
 def test_random_image_status_code_equals_200():
     response = requests.get("https://dog.ceo/api/breed/husky/images/random")
@@ -27,8 +25,7 @@ def test_random_image_status_code_equals_200():
 
 
 
-import requests
-import pytest
+
 
 def test_breed_images_are_not_empty():
     response = requests.get("https://dog.ceo/api/breed/husky/images")
@@ -38,9 +35,6 @@ def test_breed_images_are_not_empty():
 
 
 
-import requests
-import pytest
-
 def test_random_image_status_code_equals_200_for_breed():
     response = requests.get("https://dog.ceo/api/breed/husky/images/random")
     assert response.status_code == 200
@@ -48,8 +42,6 @@ def test_random_image_status_code_equals_200_for_breed():
 
 
 
-import requests
-import pytest
 
 def test_random_image_status_code_equals_200_for_all_breeds():
     response = requests.get("https://dog.ceo/api/breeds/image/random")
@@ -58,8 +50,6 @@ def test_random_image_status_code_equals_200_for_all_breeds():
 
 
 
-import requests
-import pytest
 
 @pytest.mark.parametrize("size", ["small", "thumb", "medium", "large"])
 def test_random_image_by_size(size):
@@ -68,9 +58,6 @@ def test_random_image_by_size(size):
 
 
 
-
-import requests
-import pytest
 
 def test_sub_breeds_for_breed():
     response = requests.get("https://dog.ceo/api/breed/husky/list")

@@ -8,8 +8,6 @@ def test_get_users_status_code_equals_200():
 
 
 
-import requests
-import pytest
 
 def test_users_list_is_not_empty():
     response = requests.get("https://jsonplaceholder.typicode.com/users")
@@ -19,16 +17,11 @@ def test_users_list_is_not_empty():
 
 
 
-import requests
-import pytest
+
 
 def test_get_user_posts_status_code_equals_200():
     response = requests.get("https://jsonplaceholder.typicode.com/users/1/posts")
     assert response.status_code == 200
-
-
-import requests
-import pytest
 
 def test_user_posts_list_is_not_empty():
     response = requests.get("https://jsonplaceholder.typicode.com/users/1/posts")
@@ -41,8 +34,6 @@ def test_user_posts_list_is_not_empty():
 
 
 
-import requests
-import pytest
 
 def test_post_comments_list_is_not_empty():
     response = requests.get("https://jsonplaceholder.typicode.com/posts/1/comments")
@@ -51,8 +42,6 @@ def test_post_comments_list_is_not_empty():
 
 
 
-import requests
-import pytest
 
 @pytest.mark.parametrize("post_id", [1, 2, 3])
 def test_get_post_status_code_equals_200(post_id):
@@ -62,8 +51,7 @@ def test_get_post_status_code_equals_200(post_id):
 
 
 
-import requests
-import pytest
+
 
 def test_post_has_title_and_body():
     response = requests.get("https://jsonplaceholder.typicode.com/posts/1")
