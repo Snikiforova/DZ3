@@ -1,6 +1,6 @@
-@pytest.fixture
-def url(request):
-    return request.config.getoption('--url')
+import pytest
+
+
 def pytest_addoption(parser):
     parser.addoption('--url', default='https://ya.ru', help='URL to test')
     parser.addoption('--status_code', default=200, help='Expected HTTP status code')
