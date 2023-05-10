@@ -1,18 +1,19 @@
 import requests
 import pytest
 
-def test_get_all_breeds_status_code_equals_200():
-    response = requests.get("https://dog.ceo/api/breeds/list/all")
-    assert response.status_code == 200
-
-
-
-
 
 def test_all_breeds_list_is_not_empty():
     response = requests.get("https://dog.ceo/api/breeds/list/all")
+    assert response.status_code == 200
     data = response.json()
     assert len(data["message"]) > 0
+
+
+
+
+def test_get_all_breeds_status_code_equals_200():
+    response = requests.get("https://dog.ceo/api/breeds/list/all")
+    assert response.status_code == 200
 
 
 
